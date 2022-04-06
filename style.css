@@ -12,6 +12,10 @@ body {
     background-color: #333;
 }
 
+body.light {
+    background: #f8f8f8;
+}
+
 .container {
     position: relative;
     min-width: 300px;
@@ -33,7 +37,8 @@ body {
     position: relative;
     grid-column: span 4;
     height: 100px;
-    width: 100%;
+    left: 10px;
+    width: calc(100% - 20px);
     border: none;
     outline: none;
     background: #a7af7c;
@@ -94,7 +99,7 @@ body {
 
 .calculator .clear {
     grid-column:  span 2;
-    width: 170px;
+    width: 180px;
     background: #f00;
 }
 
@@ -107,7 +112,7 @@ body {
 
 .calculator .plus {
     grid-row: span 2;
-    height: 170px;
+    height: 180px;
 }
 
 .calculator .equal {
@@ -115,8 +120,47 @@ body {
 }
 
 .calculator .equal::before {
-    background: linear-gradient(90deg, #d20000, #ffffff5c);
+    background: linear-gradient(90deg, #1479c9, #ffffff5c);
     border-left: 1px solid #fff4;
     border-bottom: 1px solid #fff4;
     border-top: 1px solid #fff4;
+}
+
+.btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #333;
+    font-size: 1.5em;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.25), 5px 5px 30px rgba(0,0,0,0.25), inset -2px -2px 5px rgba(0,0,0,0.25), inset 2px 2px 5px rgba(0,0,0,0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+body.light .btn{
+  background: #fafafa;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.1), 5px 
+  5px 30px rgba(0,0,0,0.05), inset -2px -2px 5px rgba(0,0,0,0.1), inset 2px 2px 5px rgba(0,0,0,
+  0.05);
+}
+
+.btn strong {
+    display: none;
+}
+
+.btn strong:nth-child(1) {
+    display: block;
+}
+
+body.light .btn strong:nth-child(1) {
+    display: none;
+}
+
+body.light .btn strong:nth-child(2) {
+    display: block;
 }
